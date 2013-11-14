@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Player:</b>
+  <%= @player_statistic.player.name %>
+</p>
+
+<p>
+  <b>Ppg:</b>
+  <%= @player_statistic.ppg %>
+</p>
+
+<p>
+  <b>Rpg:</b>
+  <%= @player_statistic.rpg %>
+</p>
+
+<p>
+  <b>Apg:</b>
+  <%= @player_statistic.apg %>
+</p>
+
+
+<%= link_to 'Edit', edit_player_statistic_path(@player_statistic) %> |
+<%= link_to 'Back', player_statistics_path %>

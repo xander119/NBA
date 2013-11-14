@@ -1,0 +1,33 @@
+<h1>Players</h1>
+<%= will_paginate @movies %>
+<table align="center" width="90%", heigh="60%">
+  <tr >
+    <th>Team</th>
+    <th>Jerseynumber</th>
+    <th>Name</th>
+    <th>Yearspro</th>
+    <th>Height</th>
+    <th>Weight</th>
+    <th>Rookieyear</th>
+    <th>Nationality</th>
+    <th></th>
+  </tr>
+
+<% @players.each do |player| %>
+  <tr align="center" >
+    <td><%= image_tag(player.team.logo,:size=>"50x50") %></td>
+    <td><%= player.jerseynumber %></td>
+    <td><%= player.name %></td>
+    <td><%= player.yearspro %></td>
+    <td><%= player.height %></td>
+    <td><%= player.weight %></td>
+    <td><%= player.rookieyear %></td>
+    <td><%= player.nationality %></td>
+    <td><%= link_to 'Show Details', player %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Back Home', pages_home_path(@pages) %>

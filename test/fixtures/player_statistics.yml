@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  player_id: 1
+  ppg: 9.99
+  rpg: 9.99
+  apg: 9.99
+
+two:
+  player_id: 1
+  ppg: 9.99
+  rpg: 9.99
+  apg: 9.99

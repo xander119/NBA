@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Team:</b>
+  <%= image_tag(@player.team.logo) %>
+</p>
+
+<p>
+  <b>Jerseynumber:</b>
+  <%= @player.jerseynumber %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @player.name %>
+</p>
+
+<p>
+  <b>Yearspro:</b>
+  <%= @player.yearspro %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%= @player.height %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @player.weight %>
+</p>
+
+<p>
+  <b>Rookieyear:</b>
+  <%= @player.rookieyear %>
+</p>
+
+<p>
+  <b>Nationality:</b>
+  <%= @player.nationality %>
+</p>
+<p>
+  <b>Position Play:</b>
+  <%= @player.position.position %>
+</p>
+
+
+
+<%= link_to 'Back', players_path %>

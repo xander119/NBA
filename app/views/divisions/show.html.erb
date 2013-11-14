@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+
+<div align="center">
+<p >
+  <h3><%= @division.title %></h3>
+</p>
+<p>
+  <%= image_tag(@division.photo, :size=>"100x100" ) %>
+</p>
+</div>
+
+<p >
+	<h3><b>Teams:</b></h3><br \>
+	<table align="center" width="90%", heigh="60%">
+	<tr>
+		<% @division.teams.each do |t| %>
+			<td><%= link_to t.name, t %></td>
+			<td><%= image_tag(t.logo, :size =>'30x30') %></td>
+			<td><%= t.city %></td>
+			<td><%= t.arena %></td>
+	<tr>
+	<% end %>
+	</table>
+</p>
+
+<%= link_to 'Edit', edit_division_path(@division) %> |
+<%= link_to 'Back', divisions_path %>

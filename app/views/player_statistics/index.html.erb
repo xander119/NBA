@@ -1,0 +1,27 @@
+<h1>Player statistics</h1>
+
+<table align="center" width="70%", heigh="60%">
+  <tr align="center">
+    <th>Player</th>
+    <th>Ppg</th>
+    <th>Rpg</th>
+    <th>Apg</th>
+    <th></th>
+  </tr>
+
+<% @player_statistics.each do |player_statistic| %>
+  <tr align="center">
+    <td><%= link_to player_statistic.player.name, player_statistic.player %></td>
+    <td><%= player_statistic.ppg %></td>
+    <td><%= player_statistic.rpg %></td>
+    <td><%= player_statistic.apg %></td>
+  
+    <td><%= link_to 'Destroy', player_statistic, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+
+</table>
+
+<br />
+
+<%= link_to 'Back Home', pages_home_path(@pages) %>
