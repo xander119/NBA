@@ -1,4 +1,6 @@
 Nba::Application.routes.draw do
+  resources :posts
+
   resources :positions
 
   get "sessions/new"
@@ -23,6 +25,12 @@ Nba::Application.routes.draw do
 
   resources :divisions
 
+  
+  resources :posts
+	resources :teams do
+		resources :posts
+	end
+	
   resources :sessions
   
    match'/about'=> "pages#about"

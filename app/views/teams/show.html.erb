@@ -60,6 +60,26 @@
   </tr>
 <% end %>
 </table>
+<h3>Please leave a comment:</h3>
+<%= form_for([@team, Post.new], :remote => true) do |f|%>
+	<%= f.text_area :content, :rows=>3 %>
+	<div class="actions" >
+		<%= f.submit "Post a comment"%>
+	</div>
+<% end %>
+<% if @team.posts.empty? %>
+	<h3>You are the first to comment</h3>
+<% else %>
+	<div id ="posts">
+	<% @team.posts.reverse.each do |post|%>
+	<p><%= post.content %>
+		posted: <%= time_ago_in_words(post.created_at) %>ago by
+		<%= link_to "Delete?", [@team, post], method: :delete %>
+		<%= post.user.name %>
+	<% end %>
+	</div>
+<% end %>
 <div align ="right">
 |<%= link_to 'Back', teams_path() %> |
 </div>
+

@@ -1,6 +1,7 @@
 class Team < ActiveRecord::Base
 has_many :players
 has_many :coaches
+has_many :posts, :dependent=> :destroy
 belongs_to :division
 
 validates_presence_of :name 

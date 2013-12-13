@@ -9,7 +9,11 @@ class SessionsController < ApplicationController
 	
 	if user && user.authenticate(params[:password])
 		session[:user_id] = user.id
-		redirect_to session[:return_to]
+		if session[:return_to] == nil
+			session[:return_to] = home
+		else
+			redirect_to session[:return_to]
+		end
 	else 
 		flash[:notice] = "Invalid name or password.Enter again:"
 		render 'new'
