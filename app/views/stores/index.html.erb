@@ -1,0 +1,26 @@
+<h1>NBA Store</h1>
+
+<table align="center" width="90%", heigh="60%">
+  <tr >
+    <th>Category</th>
+    <th>Price</th>
+    <th>Stocklevel</th>
+    <th>Product Age(days)</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stores.each do |store| %>
+  <tr align="center">
+    <td><%= store.category %></td>
+    <td>$<%= store.price %></td>
+    <td><%= store.stocklevel %></td>
+    <td><%= (Date.today-store.startdate).to_i %></td>
+    <td><%= link_to 'Show', store %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

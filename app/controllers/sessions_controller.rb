@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
 	user = User.find_by_name(params[:name])
 	
 	if user && user.authenticate(params[:password])
+		
 		session[:user_id] = user.id
 		if session[:return_to] == nil
 			session[:return_to] = home
@@ -30,8 +31,6 @@ class SessionsController < ApplicationController
 			redirect_to signin_path
  end
 
-def new
 
-end
 
 end

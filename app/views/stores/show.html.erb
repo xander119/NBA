@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<%= image_tag(@store.picture, :size=>"100x100") %>
+<p>
+  <b>Category:</b>
+  <%= @store.category %>
+</p>
+
+<p>
+  <b>Price:</b>
+  $<%= @store.price %>
+</p>
+
+<p>
+  <b>Stocklevel:</b>
+  <%= @store.stocklevel %>
+</p>
+
+<p>
+  <b>Startdate:</b>
+  <%= @store.startdate %>
+</p>
+
+
+
+<%= link_to 'Back', stores_path %>

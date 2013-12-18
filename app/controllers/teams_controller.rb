@@ -1,6 +1,18 @@
 class TeamsController < ApplicationController
+
 before_filter :authorise, :except => [:index]
 
+def search
+	@teams = Team.paginate(:page => params[:page], :per_page => 4).search params[:q]
+		unless @teams.empty?
+			render 'index'
+		else
+			flash[:notice] = 'No teams matches the search'
+			redirect_to teams_path
+	end
+	flash[:notice] = nil;
+	end
+	
   # GET /teams
   # GET /teams.json
   def index
@@ -15,7 +27,7 @@ before_filter :authorise, :except => [:index]
   # GET /teams/1.json
   def show
     @team = Team.find(params[:id])
-
+	
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @team }

@@ -2,14 +2,16 @@
 <html>
 <head>
   <title>Nba</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+<%= stylesheet_link_tag  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css",  "application", :media => "all" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "application", "rails.validations" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div id="banner">
 <%= @page_title || "  " %>
 </div>
+<div id="draggable" align = "center"id = "tooltip" title = "Drag me">  <p><%= link_to "Visit NBA Offical website",'http://www.nba.com' %></p></div>
+
 <div id="columns">
 <p align="right">
 <% if !signed_in? %>
@@ -20,7 +22,7 @@
 		<%= link_to "Edit Profile", edit_user_path(@current_user) %>
 	<%end %>
 </p>
-<table  align="center" width="90%", heigh="60%" >
+<table  align="center" width="90%", heigh="60%" id="menu">
   <tr id="cellcolor" >
 	<th><%= link_to "Home", pages_home_path %></th>
 	<th><%= link_to "Divisions", divisions_path %></th>
@@ -28,14 +30,17 @@
     <th><%= link_to "Players", players_path %></th>
 	<th><%= link_to "Coaches", coaches_path %></th>
     <th><%= link_to "Statistics", player_statistics_path %></th>
+	<th><%= link_to image_tag('store.gif', :size=>"100x40", :alt=>"Click to See Details"), stores_path %></th>
   </tr>
 </table>
 
+<div id="search" align ="right">
+	<%= render :partial => 'teams/search' %>
+</div>
 </div>
 
-
 <%= yield %>
-
+<p id="flash" ><%= notice %> </p>
 <div id = "footer" align="center">
 DT354 Year 3  Zechen Wang
 </div>

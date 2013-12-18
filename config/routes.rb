@@ -1,6 +1,10 @@
 Nba::Application.routes.draw do
   resources :posts
 
+  resources :stores
+
+ resources :posts
+
   resources :positions
 
   get "sessions/new"
@@ -24,21 +28,22 @@ Nba::Application.routes.draw do
   resources :teams
 
   resources :divisions
-
   
-  resources :posts
-	resources :teams do
+ resources :sessions
+ 
+  	resources :teams do
 		resources :posts
 	end
 	
-  resources :sessions
+ 
   
-   match'/about'=> "pages#about"
+   match'/about'=> 'pages#about'
   
   match'/signin'=> "sessions#new"
   
   match'/signout'=> "sessions#destroy"
   
+  match'/search'=> "teams#search"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

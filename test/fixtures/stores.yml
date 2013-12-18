@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  category: MyString
+  price: 9.99
+  stocklevel: 1
+  startdate: 2013-12-18
+
+two:
+  category: MyString
+  price: 9.99
+  stocklevel: 1
+  startdate: 2013-12-18

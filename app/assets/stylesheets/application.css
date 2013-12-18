@@ -12,14 +12,6 @@
  *= require_tree .
  */
 
- #align{
-  margin-left:auto; 
-    margin-right:auto;
- }
- #cellcolor{
- background-color: #000000
- }
- 
  
  #banner{
   background-image:url('nbaBanner.jpg');
@@ -38,22 +30,10 @@
 }
 
 
-#font1{
- font-family:"Times New Roman", Serif;
- font-size:1.8em;
- font-style:italic;
- line-height:120%;
-}
-#footer {
-height: 4em;
-font-family:Arial Black;
-color: blue;
-  margin-left:auto; 
-    margin-right:auto;
-}
+
 
 #columns {
-  background: white;
+  background: red;
   color: #FFFFFF;
 
  #main {
@@ -125,11 +105,14 @@ color: blue;
   list-style-type: none;
   display: inline-block;
   padding: 0.2em 0;
+  display: inline;
+  float: left;
 }
 
 #nav ul li a {
-  padding: 0 5px;
-  font-weight: bold;
+  width: 15em;
+  padding: 0.5em 1em;
+  text-decoration: none;
 }
 
 #nav ul li a:visited {
@@ -141,9 +124,35 @@ background-color:#98bf21;
 text-align:center;
 padding:4px;
 text-decoration:none;
+font-weight:bold;
 }
 
-
 #nav ul li a:hover {
-  background-color:#7A991A;
+  background-color:black;
   }
+  
+   #draggable { width: 170px;
+ height: 40px;
+ padding: 0.5em;
+ background-image:url('incrediline.jpg');
+  background-repeat:no-repeat;
+  background-position:center;
+ }
+.backToTop {
+    display: none;
+    width: 30px;
+    line-height: 1.2;
+    padding: 8px 0;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    position: fixed;
+    _position: absolute;
+    right: 10px;
+    bottom: 100px;
+    cursor: pointer;
+    opacity: .6;
+    filter: Alpha(opacity=60);
+}
+label {    display: inline-block;    width: 5em;  }

@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" id = "tooltip" title = "Name">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
@@ -23,13 +23,13 @@
    <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </div>
-  <div class="field">
+  <div class="field" id = "tooltip" title = "Email">
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, id: :EmailTest %>
   </div>
   <div class="field">
     <%= f.label :dob %><br />
-    <%= f.date_select :dob,start_year: 1970%>
+    <%= f.text_field :dob,id: :datepicker%>
   </div>
   <div class="field">
     <%= f.label :sex %><br />

@@ -1,15 +1,13 @@
 class PostsController < ApplicationController
-before_filter :authorise, :only => [:create, :destroy]
+before_filter :authorise
  
 	def create
 		@team = Team.find params[:team_id]
 		@post = @team.posts.create params[:post]
-		@post.team_id = @current_team.id
 		@post.user_id = @current_user.id
+		@post.team_id = @current_team.id
+		@post.save
 		
-		
-		 
-		 
 		respond_to do |format|
 			format.js 
 			format.html{redirect_to @team}

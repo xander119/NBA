@@ -1,0 +1,7 @@
+<div id = "tooltip" title = "Search For team">
+<%= form_tag("/search", :method => "get") do %>
+   <%= label_tag(:q, "Search :") %>
+   <%= text_field_tag(:q, params[:q], :id => 'q_field') %>
+   <%= submit_tag("Search") %>
+<% end %> 
+</div>

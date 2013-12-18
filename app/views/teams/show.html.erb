@@ -26,7 +26,10 @@
   <b>Arena:</b>
   <%= @team.arena %>
 </p>
-
+<p>
+  <b>Arena Address:</b>
+  <%= image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@team.latitude}%2C#{@team.longitude}" ) %>
+</p>
 <p>
   <b>Yearfounded:</b>
   <%= @team.yearfounded %>
@@ -60,6 +63,7 @@
   </tr>
 <% end %>
 </table>
+
 <h3>Please leave a comment:</h3>
 <%= form_for([@team, Post.new], :remote => true) do |f|%>
 	<%= f.text_area :content, :rows=>3 %>
@@ -67,6 +71,7 @@
 		<%= f.submit "Post a comment"%>
 	</div>
 <% end %>
+
 <% if @team.posts.empty? %>
 	<h3>You are the first to comment</h3>
 <% else %>
@@ -75,7 +80,7 @@
 	<p><%= post.content %>
 		posted: <%= time_ago_in_words(post.created_at) %>ago by
 		<%= link_to "Delete?", [@team, post], method: :delete %>
-		<%= post.user.name %>
+		
 	<% end %>
 	</div>
 <% end %>
